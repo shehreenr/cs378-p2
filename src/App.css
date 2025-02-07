@@ -3,6 +3,74 @@
   Below, you can see an example of a class called "menu" that changes the color of the text to blue. Modify according to your needs.
 */
 
-.menu {
-  color: blue;
+body {
+  color: rgb(67, 68, 57);
+  background-color: rgb(160, 143, 123);
+  padding-inline: 25%;
+  padding-bottom: 5%;
+  text-align: center;
 }
+
+.logo {
+  margin-top: 5%;
+  height: 5%;
+  width: 5%;
+}
+.menu-item {
+  color: rgb(91, 58, 38);
+  background-color: rgb(200, 191, 170);
+  border-radius: 10%;
+  margin: 2%;
+}
+
+.slogan {
+  font-style: italic;
+  color: rgb(101, 21, 21);
+}
+
+.row {
+  border-radius: 20px;
+  display: flex;
+  justify-content: flex-end;
+  border-radius: 10%;
+}
+
+
+.col-4 {
+  padding: 3%;
+  margin: auto;    
+  display: block;
+  flex: 1;
+  max-width: 50%;
+}
+
+.item-info {
+  text-align: left;
+  width: 100%;
+  height: auto;
+  flex-grow: 1; 
+}
+
+.image {
+  border-radius: 10%;
+  width: 90%;
+  height: 90%;
+}
+
+button {
+  width: 80px;
+  border: none;
+  background-color: rgb(77, 55, 38);
+  border-radius: 40%;
+  padding-inline: 70%x;
+  margin-left: 20%;
+  color: rgb(160, 143, 123);
+  box-shadow: 0 8px 16px 0 rgba(200, 147, 121, 0.2), 0 8px 16px 0 rgba(11, 27, 13, 0.2);
+
+} 
+
+.order-item {
+  display: inline-flex;
+}
+
+
