@@ -9,8 +9,8 @@ const MenuItem = ({ title, description, price }) => {
     return (
         <div className="menu-item">
             <div className="row justify-content-center"> 
-                <div className="col-4"> <
-                    img src={process.env.PUBLIC_URL+"/images/${title}.png"} className="image" alt={title} /> 
+                <div className="col-4"> 
+                    <img src={`${process.env.PUBLIC_URL}/images/${title}.png`} alt={title} className="image" /> 
                 </div>
                 <div className="col-4">
                     <div className="item-info">

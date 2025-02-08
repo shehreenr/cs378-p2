@@ -82,7 +82,7 @@ const menuItems = [
 function App() {
   return (
     <div>
-        <img src={process.env.PUBLIC_URL+"/images/logo.jpg"} alt="logo" className='logo'></img>
+        <img src={process.env.PUBLIC_URL+`/images/logo.jpg`} alt="logo" className='logo'></img>
         <h1>Taste of Japan</h1>
         <p className="slogan"> Authentic Japanese Cuisine. </p>
       <div className="menu">
