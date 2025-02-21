@@ -1,5 +1,7 @@
 import './App.css';
 import MenuItem from './components/MenuItem';
+import React from 'react';
+import {useState} from 'react';
 
 // import 'bootstrap/dist/css/bootstrap.min.css'; // This imports bootstrap css styles. You can use bootstrap or your own classes by using the className attribute in your elements.
 
@@ -80,6 +82,46 @@ const menuItems = [
 
 
 function App() {
+
+  const [count, setCount] = useState({});
+  const [subtotal, setSubtotal] = useState(0);
+
+  const incCount = (id, price) => {
+    setCount((prevCounts) => ({
+      ...prevCounts,
+      [id]: (prevCounts[id] || 0) + 1
+    }));
+    setSubtotal(subtotal + price)
+  };
+
+  const decCount = (id, price) => {
+    setCount((prevCounts) => {
+      const newCount = Math.max((prevCounts[id] || 0) - 1, 0);
+      if (prevCounts[id] && prevCounts[id] > 0) {
+        setSubtotal(subtotal - price > 0 ? subtotal - price : 0);
+      }
+      return {
+        ...prevCounts,
+        [id]: newCount
+      };
+    });
+  };
+
+  const clear = () => {
+    setSubtotal(0)
+    setCount({})
+  };
+
+  const handleButtonClick = () => {
+    let alertMsg = `Order Placed! \n`;
+    menuItems.forEach(item => {
+      if (count[item.id] > 0) {
+        alertMsg += `${count[item.id]} ${item.title} `;
+      }
+    });
+    alert(alertMsg);
+  };
+
   return (
     <div>
         <img src={process.env.PUBLIC_URL+`/images/logo.jpg`} alt="logo" className='logo'></img>
@@ -91,11 +133,19 @@ function App() {
             key={item.id} 
             title={item.title}
             description={item.description}
-            price={item.price}/>
+            price={item.price}
+            count={count[item.id] || 0}     
+            incCount={() => incCount(item.id, item.price)} 
+            decCount={() => decCount(item.id, item.price)}/>
         ))}
       </div>
+      <div className="cart">
+        Subtotal: ${subtotal}
+        <button className="cart-button" onClick={handleButtonClick}> Order </button>
+        <button className="cart-button" onClick={clear}> Clear All </button>
+      </div>
     </div>
-  );
+  );  
 }
 
 export default App;

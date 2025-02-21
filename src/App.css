@@ -16,6 +16,11 @@ body {
   height: 5%;
   width: 5%;
 }
+
+h2 {
+  white-space: nowrap;
+}
+
 .menu-item {
   color: rgb(91, 58, 38);
   background-color: rgb(200, 191, 170);
@@ -41,14 +46,16 @@ body {
   margin: auto;    
   display: block;
   flex: 1;
-  max-width: 50%;
+  max-width: 70%;
 }
 
 .item-info {
-  text-align: left;
-  width: 100%;
-  height: auto;
-  flex-grow: 1; 
+  display: flex;
+  justify-content: space-between;
+  max-width: 70%;
+  align-items: center;
+  margin-bottom: 30%;
+  gap: 15px;
 }
 
 .image {
@@ -58,19 +65,34 @@ body {
 }
 
 button {
-  width: 80px;
-  border: none;
+  width: 100%;
   background-color: rgb(77, 55, 38);
   border-radius: 40%;
-  padding-inline: 70%x;
-  margin-left: 20%;
+  margin: 10%;
   color: rgb(160, 143, 123);
   box-shadow: 0 8px 16px 0 rgba(200, 147, 121, 0.2), 0 8px 16px 0 rgba(11, 27, 13, 0.2);
-
 } 
 
 .order-item {
   display: inline-flex;
+  width: 50%;
+  align-content: flex-end;
+  gap: 5%;
 }
 
+.count {
+  width: 100%;
+  text-align: right;
+}
 
+.cart {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 15%;
+}
+
+.cart-button {
+  white-space: nowrap;
+}
