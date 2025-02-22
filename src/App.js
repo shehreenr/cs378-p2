@@ -108,22 +108,22 @@ function App() {
   };
 
   const clear = () => {
-    if (subtotal === 0) {
-      alert("No items in cart");
-    } else {
       setSubtotal(0);
       setCount({});
-    }
   };
 
-  const handleButtonClick = () => {
-    let alertMsg = `Order Placed! \n`;
-    menuItems.forEach(item => {
-      if (count[item.id] > 0) {
-        alertMsg += `${count[item.id]} ${item.title} `;
-      }
-    });
-    alert(alertMsg);
+  const order = () => {
+    if (subtotal === 0) {
+      alert('No items in cart');
+    } else {
+      let alertMsg = `Order Placed! \n`;
+      menuItems.forEach(item => {
+        if (count[item.id] > 0) {
+          alertMsg += `${count[item.id]} ${item.title} `;
+        }
+      });
+      alert(alertMsg);
+    }
   };
 
   return (
@@ -145,7 +145,7 @@ function App() {
       </div>
       <div className="cart">
         Subtotal: ${subtotal}
-        <button className="cart-button" onClick={handleButtonClick}> Order </button>
+        <button className="cart-button" onClick={order}> Order </button>
         <button className="cart-button" onClick={clear}> Clear All </button>
       </div>
     </div>
