@@ -108,8 +108,12 @@ function App() {
   };
 
   const clear = () => {
-    setSubtotal(0)
-    setCount({})
+    if (subtotal === 0) {
+      alert("No items in cart");
+    } else {
+      setSubtotal(0);
+      setCount({});
+    }
   };
 
   const handleButtonClick = () => {
